@@ -1,0 +1,123 @@
+    html, body, div,
+      a, img {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      body {
+        line-height: 1;
+      }
+
+      body {
+        font-family:sans-serif;
+        background:white;
+        overflow:hidden;
+        width:728px;
+      }
+
+      #container {
+        position:relative;
+        overflow:hidden;
+        width:728px;
+        height:90px;
+        background-repeat:repeat-y;
+        background-color:#FFFFFF;
+      }
+
+      @media (min-width: 748px) {
+        body {
+          width:100%;
+        }
+        #container {
+          margin:0 auto;
+          text-align:center;
+        }
+      }
+
+      .layer {
+        height:px;
+        width:728px;
+        position:absolute;
+        top:0;
+        left:0;
+        background-repeat:repeat;
+        background-color:transparent;
+        background-position:center bottom;
+        -webkit-transition-property:-webkit-transform;
+        -webkit-transition-duration:0.4s;
+        -webkit-transition-timing-function:ease-out;
+      }
+
+/* layer-n { width: w; left: (728-w)/2; } */
+
+      #google-logo {
+        position:absolute;
+        font-size:32px;
+        line-height:40px;
+        text-align:center;
+        top:0px;
+      }
+      #google-logo img {
+        vertical-align: middle;
+      }
+
+      .loading .layer {
+        -webkit-transform:translate3d(0,90px,0);
+      }
+
+      .intro .layer {
+        -webkit-transform:translate3d(0,0,0);
+      }
+      .intro #layer-3 {
+        -webkit-transition-duration:0.5s;
+        -webkit-transition-delay:0s;
+      }
+      .intro #layer-2 {
+        -webkit-transition-duration:0.6s;
+        -webkit-transition-delay:0.3s;
+      }
+      .intro #layer-1 {
+        -webkit-transition-duration:0.7s;
+        -webkit-transition-delay:0.5s;
+      }
+      .intro #google-logo {
+        -webkit-transition-duration:0;
+      }
+
+      .loading .layer > img {
+        -webkit-transform:translate3d(0,90px,0);
+      }
+      .layer > img {
+        -webkit-transform:translate3d(0,0,0);
+      }
+      .intro #google-logo > img {
+        -webkit-transition-duration:1.8s;
+      }
+      .intro #google-logo :nth-child(1) {
+        -webkit-transition-delay:0.1s;
+      }
+      .intro #google-logo :nth-child(2) {
+        -webkit-transition-delay:0.2s;
+      }
+      .intro #google-logo :nth-child(3) {
+        -webkit-transition-delay:0.5s;
+      }
+
+      .autoplay .layer {
+        -webkit-transition-duration:0;
+        -webkit-animation-name: autoplay;
+        -webkit-animation-duration: 40s;
+        -webkit-animation-iteration-count:infinite;
+        -webkit-animation-timing-function:linear;
+      }
+
+      @-webkit-keyframes autoplay {
+        from { -webkit-transform:translate3d(0,0,0); }
+        20% { -webkit-transform:translate3d(-17.6%,0,0); }
+        50% { -webkit-transform:translate3d(0,0,0); }
+        75% { -webkit-transform:translate3d(17.6%,0,0); }
+        to { -webkit-transform:translate3d(0,0,0); }
+      }
